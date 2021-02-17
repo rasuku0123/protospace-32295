@@ -5,11 +5,11 @@ Rails.application.routes.draw do
  root to: 'prototypes#index'
  resources :users, only:[:index, :new, :create, :show]
  resources :users do
-  resources :comments, only: :creat
+  resources :comments, only: [:creat, :show]
  end
  resources :prototypes, only:[:index, :new, :create, :show, :edit, :update, :destroy]
  resources :prototypes do
-  resources :comments, only: :show
+  resources :comments, only: [:show, :create]
 end
 
 end
