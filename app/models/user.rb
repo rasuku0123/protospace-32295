@@ -8,7 +8,9 @@ class User < ApplicationRecord
   validates :profile, presence: true
   validates :position, presence: true
   validates :occupation, presence: true
-
+  validates :password, confirmation: true
+  # validates :password_confimation, presence: true
+  # binding.pry
   has_many :prototypes
   has_many :comments
 

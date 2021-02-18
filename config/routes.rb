@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
  root to: 'prototypes#index'
- resources :users, only:[:index, :new, :create, :show]
- resources :users do
-  resources :comments, only: [:creat, :show]
- end
+ resources :users, only:[:show]
+#  resources :users do
+#   resources :comments, only: [:creat, :show]
+#  end
  resources :prototypes, only:[:index, :new, :create, :show, :edit, :update, :destroy]
  resources :prototypes do
   resources :comments, only: [:show, :create]

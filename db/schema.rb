@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2021_02_09_102239) do
     t.text "profile", null: false
     t.text "position", null: false
     t.text "occupation", null: false
-    t.bigint "user_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -66,10 +65,8 @@ ActiveRecord::Schema.define(version: 2021_02_09_102239) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["user_id"], name: "index_users_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "prototypes", "users"
-  add_foreign_key "users", "users"
 end
